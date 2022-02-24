@@ -13,4 +13,14 @@ return [0,1]
 
 """
 
- 
+class solution:
+    def two_sum(self, nums: [2, 3, 11, 15], target: 9) -> [int]:
+        # hash map of each element that comes before the current element
+        prevMap = {} # val : index
+        # iterate over every value in the array, 
+        for i, n in enumerate(nums):
+            diff = target - n # find the difference
+            if diff in prevMap: # check if difference is already in the hash map
+                return [prevMap[diff], i]
+            prevMap[n] = i # if solution is not found update hash map
+        return 
